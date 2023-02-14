@@ -4,7 +4,6 @@ from datetime import datetime
 
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions
-from apache_beam.options.pipeline_options import SetupOptions
 
 SCHEMA = ",".join(
     [
@@ -68,19 +67,19 @@ if __name__ == '__main__':
         '--job_name',
         required=True,
         default="dataflow-gcp-srp-hw",
-        help='Input PubSub subscription.'
+        help='Dataflow job name.'
     )
     parser.add_argument(
         '--project',
         required=True,
         default="project-gcp-srp-hw",
-        help='Input PubSub subscription.'
+        help='Project name.'
     )
     parser.add_argument(
         '--region',
         required=True,
         default="US",
-        help='Input PubSub subscription.'
+        help='Project region.'
     )
     parser.add_argument(
         '--input_subscription',
@@ -104,31 +103,31 @@ if __name__ == '__main__':
         '--template_location',
         required=True,
         default="gs://project-gcp-srp-hw-bucket-gcp-srp-hw/templates/dataflow-job",
-        help='Output BigQuery table for error data.'
+        help='Templates location.'
     )
     parser.add_argument(
         '--staging_location',
         required=True,
         default="gs://project-gcp-srp-hw-bucket-gcp-srp-hw/temp_dir",
-        help='Input PubSub subscription.'
+        help='Staging location.'
     )
     parser.add_argument(
         '--temp_location',
         required=True,
         default="gs://project-gcp-srp-hw-bucket-gcp-srp-hw/temp_dir",
-        help='Output BigQuery table for error data.'
+        help='Temporary location.'
     )
     parser.add_argument(
         '--runner',
         required=True,
         default="DataflowRunner",
-        help='Output BigQuery table for error data.'
+        help='Runner.'
     )
     parser.add_argument(
         '--setup_file',
         required=True,
         default="df_job/setup.py",
-        help='Output BigQuery table for error data.'
+        help='Setup file.'
     )
 
     args = parser.parse_args()

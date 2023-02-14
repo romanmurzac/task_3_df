@@ -159,7 +159,7 @@ resource "google_pubsub_subscription" "subscription_cf" {
 # Define the Dataflow job
 resource "google_dataflow_job" "dataflow_job_df" {
   name = var.dataflow_name
-  template_gcs_path = "gs://bucket-gcp-srp-hw/templates/dataflow-gcp-srp-hw"
+  template_gcs_path = "gs://bucket-gcp-srp-hw/templates/dataflow-job"
   temp_gcs_location = "gs://bucket-gcp-srp-hw/temp_dir"
 
 }

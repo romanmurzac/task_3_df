@@ -163,3 +163,4 @@ resource "google_dataflow_job" "dataflow_job_df" {
   temp_gcs_location = "gs://bucket-gcp-srp-hw/temp_dir"
 
 }
+

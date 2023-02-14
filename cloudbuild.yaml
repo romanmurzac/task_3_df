@@ -19,8 +19,7 @@ steps:
          "--staging_location=gs://project-gcp-srp-hw-bucket-gcp-srp-hw/temp_dir",
          "--temp_location=gs://project-gcp-srp-hw-bucket-gcp-srp-hw/temp_dir",
          "--runner=DataflowRunner",
-         "--setup_file='df_job/setup.py'",
-         "--autoscaling_algorithm=NONE"
+         "--setup_file='df_job/setup.py'"
          ]
 #    waitFor: [
 #      'Activate virtual environment venv'

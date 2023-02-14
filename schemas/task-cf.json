@@ -1,0 +1,12 @@
+[
+  {
+    "name": "timestamp",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "raw",
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }
+]

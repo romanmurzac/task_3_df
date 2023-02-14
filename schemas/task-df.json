@@ -1,0 +1,22 @@
+[
+    {
+      "name": "StudentName",
+      "type": "STRING",
+      "mode": "REQUIRED"
+    },
+    {
+      "name": "StudyYear",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "AverageGrade",
+      "type": "FLOAT64",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "RecordTime",
+      "type": "TIMESTAMP",
+      "mode": "REQUIRED"
+    }
+  ]

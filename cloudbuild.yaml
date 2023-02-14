@@ -1,0 +1,27 @@
+steps:
+#  - id: "Activate virtual environment venv"
+#    name: 'gcr.io/project-gcp-srp-hw/dataflow-python3:latest'
+#    entrypoint: '/bin/bash'
+#    args: [ '-c', 'source /env/Scripts/activate' ]
+#    waitFor: ['-']
+
+  - id: "Create dataflow template"
+    name: 'gcr.io/project-gcp-srp-hw/dataflow-python3:latest'
+    entrypoint: 'python'
+    args: ['df_job/main.py',
+         "--job_name=dataflow-gcp-srp-hw",
+         "--project=project-gcp-srp-hw",
+         "--region=US",
+         "--input_subscription=projects/project-gcp-srp-hw/subscriptions/subscription-gcp-srp-hw",
+         "--output_success_table=project-gcp-srp-hw:dataset_gcp_srp_hw.table-gcp-srp-hw-success",
+         "--output_error_table=project-gcp-srp-hw:dataset_gcp_srp_hw.table-gcp-srp-hw-error",
+         "--template_location=gs://project-gcp-srp-hw-bucket-gcp-srp-hw/templates/dataflow-job",
+         "--staging_location=gs://project-gcp-srp-hw-bucket-gcp-srp-hw/temp_dir",
+         "--temp_location=gs://project-gcp-srp-hw-bucket-gcp-srp-hw/temp_dir",
+         "--runner=DataflowRunner",
+         "--setup_file='df_job/setup.py'",
+         "--autoscaling_algorithm=NONE"
+         ]
+#    waitFor: [
+#      'Activate virtual environment venv'
+#      ]

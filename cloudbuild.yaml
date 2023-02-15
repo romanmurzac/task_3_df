@@ -1,17 +1,17 @@
 steps:
   - id: "Create dataflow template"
-    name: 'gcr.io/project-gcp-srp-hw/dataflow-python3:latest'
+    name: 'gcr.io/project-work-gcp/dataflow-python3:latest'
     entrypoint: 'python'
     args: ['df_job/main.py',
          "--job_name=dataflow-gcp-srp-hw",
-         "--project=project-gcp-srp-hw",
+         "--project=project-work-gcp",
          "--region=US",
-         "--input_subscription=projects/project-gcp-srp-hw/subscriptions/subscription-gcp-srp-hw",
-         "--output_success_table=project-gcp-srp-hw:df_dataset_gcp_srp_hw.table-gcp-srp-hw-success",
-         "--output_error_table=project-gcp-srp-hw:df_dataset_gcp_srp_hw.table-gcp-srp-hw-error",
-         "--template_location=gs://bucket-gcp-srp-hw/templates/dataflow-job",
-         "--staging_location=gs://bucket-gcp-srp-hw/temp_dir",
-         "--temp_location=gs://bucket-gcp-srp-hw/temp_dir",
+         "--input_subscription=projects/project-work-gcp/subscriptions/subscription-gcp-srp-hw",
+         "--output_success_table=project-work-gcp:df_dataset_gcp_srp_hw.table-gcp-srp-hw-success",
+         "--output_error_table=project-work-gcp:df_dataset_gcp_srp_hw.table-gcp-srp-hw-error",
+         "--template_location=gs://bucket-work-gcp/templates/dataflow-job",
+         "--staging_location=gs://bucket-work-gcp/temp_dir",
+         "--temp_location=gs://bucket-work-gcp/temp_dir",
          "--runner=DataflowRunner",
          "--setup_file='df_job/setup.py'"
          ]

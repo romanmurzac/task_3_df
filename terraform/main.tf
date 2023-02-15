@@ -13,7 +13,6 @@ provider "google" {
   project = var.project_id
   region = var.region
   zone = var.zone
-  credentials = file("project-gcp-srp-hw-085eccd0cd34.json")
 }
 
 # Define the bucket
@@ -159,8 +158,8 @@ resource "google_pubsub_subscription" "subscription_cf" {
 # Define the Dataflow job
 resource "google_dataflow_job" "dataflow_job_df" {
   name = var.dataflow_name
-  template_gcs_path = "gs://bucket-gcp-srp-hw/templates/dataflow-job"
-  temp_gcs_location = "gs://bucket-gcp-srp-hw/temp_dir"
+  template_gcs_path = "gs://bucket-work-gcp/templates/dataflow-job"
+  temp_gcs_location = "gs://bucket-work-gcp/temp_dir"
 
 }
 

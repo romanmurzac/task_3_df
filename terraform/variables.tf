@@ -1,5 +1,5 @@
 variable "project_id" {
-  default = "project-gcp-srp-hw"
+  default = "project-work-gcp"
   type = string
   description = "Project ID"
 }
@@ -23,7 +23,7 @@ variable "zone" {
 }
 
 variable "bucket_name" {
-  default = "bucket-gcp-srp-hw"
+  default = "bucket-work-gcp"
   type = string
   description = "Storage Bucket name"
 }

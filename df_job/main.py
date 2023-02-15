@@ -72,7 +72,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--project',
         required=True,
-        default="project-gcp-srp-hw",
+        default="project-work-gcp",
         help='Project name.'
     )
     parser.add_argument(
@@ -84,37 +84,37 @@ if __name__ == '__main__':
     parser.add_argument(
         '--input_subscription',
         required=True,
-        default="/subscriptions/project-gcp-srp-hw/subscription-gcp-srp-hw",
+        default="/subscriptions/project-work-gcp/subscription-gcp-srp-hw",
         help='Input PubSub subscription.'
     )
     parser.add_argument(
         '--output_success_table',
         required=True,
-        default="project-gcp-srp-hw:df_dataset_gcp_srp_hw.table-gcp-srp-hw-success",
+        default="project-work-gcp:df_dataset_gcp_srp_hw.table-gcp-srp-hw-success",
         help='Output BigQuery table for success data.'
     )
     parser.add_argument(
         '--output_error_table',
         required=True,
-        default="project-gcp-srp-hw:df_dataset_gcp_srp_hw.table-gcp-srp-hw-error",
+        default="project-work-gcp:df_dataset_gcp_srp_hw.table-gcp-srp-hw-error",
         help='Output BigQuery table for error data.'
     )
     parser.add_argument(
         '--template_location',
         required=True,
-        default="gs://project-gcp-srp-hw-bucket-gcp-srp-hw/templates/dataflow-job",
+        default="gs://project-work-gcp-bucket-work-gcp/templates/dataflow-job",
         help='Templates location.'
     )
     parser.add_argument(
         '--staging_location',
         required=True,
-        default="gs://project-gcp-srp-hw-bucket-gcp-srp-hw/temp_dir",
+        default="gs://project-work-gcp-bucket-work-gcp/temp_dir",
         help='Staging location.'
     )
     parser.add_argument(
         '--temp_location',
         required=True,
-        default="gs://project-gcp-srp-hw-bucket-gcp-srp-hw/temp_dir",
+        default="gs://project-work-gcp-bucket-work-gcp/temp_dir",
         help='Temporary location.'
     )
     parser.add_argument(
